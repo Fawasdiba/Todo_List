@@ -1,0 +1,461 @@
+:root {
+    --main-light-blue: #e0f2fe; /* Light Blue */
+    --main-light-green: #f0fdfa; /* Light Green */
+    --main-teal: #14b8a6; /* Teal */
+    --main-gray: #cbd5e1; /* Light Gray */
+    --main-navy: #1e3a8a; /* Navy Blue */
+    --main-orange: #ff9800; /* Orange */
+    --main-bright-green: #39f941; /* Bright Green */
+    --main-red: #f44336; /* Red */
+    --main-emerald: #10b981; /* Emerald Green */
+    --bg-transparent: rgba(0, 0, 0, 0);
+}
+
+/* /=========================== Custom Button css ===========================/ */
+.btn.btn-custom {
+    padding: 0.7rem 1.2rem !important;
+    background-color: var(--main-blue) !important;
+    color: var(--main-white) !important;
+}
+
+.btn.btn-custom:active {
+    background-color: var(--main-blue-dark) !important;
+    color: var(--main-white) !important;
+    transform: translateY(2px) !important;
+}
+
+.btn.btn-custom-2 {
+    padding: 0.3rem 0.8rem !important;
+    border-radius: 4px !important;
+    font-size: 0.8rem !important;
+    background-color: var(--main-blue) !important;
+    color: var(--main-white) !important;
+}
+
+.btn.btn-custom-2:active {
+    background-color: var(--main-blue-dark) !important;
+    color: var(--main-white) !important;
+    transform: translateY(2px) !important;
+}
+
+.btn.btn-custom-3 {
+    padding: 0.2rem 1rem !important;
+    border-radius: 4px !important;
+    font-size: 0.9rem !important;
+    background-color: var(--bg-transparent) !important;
+    color: var(--main-black) !important;
+    border: 1px solid var(--main-grey) !important;
+}
+
+.btn.btn-custom-3:active {
+    background-color: var(--bg-transparent) !important;
+    color: var(--main-black) !important;
+    transform: translateY(2px) !important;
+}
+
+.btn.btn-custom-icon {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 4px !important;
+    padding: 0.4rem 0.9rem !important;
+    background-color: var(--main-blue) !important;
+    color: var(--main-white) !important;
+    cursor: pointer !important;
+}
+
+.btn.btn-custom-icon:active {
+    background-color: var(--main-blue-dark) !important;
+    color: var(--main-white) !important;
+    transform: translateY(2px) !important;
+}
+
+.btn.btn-cancel {
+    padding: 0.4rem 0.9rem !important;
+    background-color: var(--main-red) !important;
+    color: var(--main-white) !important;
+}
+
+.btn.btn-cancel:active {
+    background-color: var(--main-red);
+    color: var(--main-white);
+    transform: translateY(2px);
+}
+
+.btn.btn-delete {
+    padding: 0.2rem 1rem !important;
+    border-radius: 4px !important;
+    font-size: 0.9rem !important;
+    background-color: var(--main-red) !important;
+    color: var(--main-white) !important;
+}
+
+.badge-custom {
+    background-color: var(--main-light-blue) !important;
+    font-weight: 500 !important;
+}
+
+/* /=========================== About css ===========================/ */
+.text-p {
+    color: var(--main-blue-dark);
+}
+
+.fact {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url(../images/bg/sparepart.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* /=========================== Custom Input css ===========================/ */
+.did-floating-label-content {
+    position: relative;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+.did-floating-label {
+    color: var(--main-light-blue);
+    font-size: 15px;
+    font-weight: 400;
+    position: absolute;
+    pointer-events: none;
+    left: 15px;
+    top: 7px;
+    padding: 0 5px;
+    background: #fff;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+.did-floating-input,
+.did-floating-select {
+    font-size: 14px;
+    font-weight: 400;
+    display: block;
+    width: 100%;
+    height: 36px;
+    padding: 8px 20px;
+    background: #fff;
+    color: #4a4a4a;
+    border: 1px solid var(--main-light-blue);
+    border-radius: 4px;
+    box-sizing: border-box;
+    &:focus {
+        outline: none;
+        ~ .did-floating-label {
+            top: -8px;
+            font-size: 13px;
+        }
+    }
+}
+
+select.did-floating-select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+select.did-floating-select::-ms-expand {
+    display: none;
+}
+
+.did-floating-input:not(:placeholder-shown) ~ .did-floating-label {
+    top: -8px;
+    font-size: 13px;
+}
+.did-floating-select:not([value=""]):valid ~ .did-floating-label {
+    top: -8px;
+    font-size: 13px;
+}
+.did-floating-select[value=""]:focus ~ .did-floating-label {
+    top: 11px;
+    font-size: 13px;
+}
+
+.input-group-custom {
+    display: flex;
+    .did-floating-input {
+        border-radius: 0 4px 4px 0;
+        border-left: 0;
+        padding-left: 0;
+    }
+}
+
+.input-group-prepend {
+    display: flex;
+}
+
+.input-group-custom {
+    display: flex;
+}
+
+.input-group-text {
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    height: 36px;
+    color: #000;
+    padding: 0 5px 0 15px;
+    font-size: 18px;
+    text-align: center;
+    white-space: nowrap;
+    border: 1px solid var(--main-blue);
+    border-radius: 4px 0 0 4px;
+    border-right: none;
+}
+
+@media (max-width: 1023px) {
+    .did-floating-label.custom {
+        font-size: 12px;
+    }
+}
+
+/* /=========================== FAQs css ===========================/ */
+.accordion-button {
+    background-color: #f8f9fa;
+    color: var(--main-dark-blue);
+    font-weight: 500;
+    padding: 1rem;
+    border: 0.5px solid var(--main-dark);
+    box-shadow: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: var(--main-light-blue);
+    color: var(--main-light-grey);
+}
+
+.accordion-button:not(.collapsed):hover {
+    background-color: var(--main-light-blue);
+    color: var(--main-light-grey);
+}
+
+.accordion-button:hover {
+    background-color: var(--main-light-grey);
+    color: var(--main-light-blue);
+}
+
+.accordion-button::after {
+    content: none;
+}
+
+.accordion-button.collapsed .bx {
+    transform: rotate(0deg);
+    transition: transform 0.3s;
+}
+
+.accordion-button .bx {
+    transform: rotate(-180deg);
+    transition: transform 0.3s;
+}
+
+.accordion-item {
+    border: none;
+}
+
+.accordion-item:last-child {
+    margin-bottom: 0;
+}
+
+.accordion-body {
+    background-color: var(--main-light-grey);
+    color: var(--main-dark-blue);
+    padding: 1.5rem;
+    border-radius: 0 0 0.25rem 0.25rem;
+}
+
+h2 {
+    color: var(--main-dark);
+}
+
+/* /=========================== Support Center css ===========================/ */
+.hover-lift-light {
+    transition: box-shadow 0.25s ease, transform 0.25s ease, color 0.25s ease,
+        background-color 0.15s ease-in;
+}
+.text-decoration-none {
+    text-decoration: none !important;
+}
+.py-4.category {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+}
+.align-items-center {
+    align-items: center !important;
+}
+.border-0 {
+    border: 0 !important;
+}
+.category {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: var(--main-white);
+    background-clip: border-box;
+    border: 1px solid rgba(30, 46, 80, 0.09);
+    border-radius: 0.25rem;
+    height: 180px;
+}
+
+.category:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.icon-circle-lg {
+    width: 4rem;
+    height: 4rem;
+}
+.icon-circle {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 50%;
+}
+
+.icon-circle i {
+    color: var(--main-blue-dark);
+}
+
+.bg-pastel-primary {
+    background-color: var(--main-light-grey) !important;
+}
+
+.mt-6 {
+    margin-top: 4rem !important;
+}
+
+.mb-4 {
+    margin-bottom: 1.5rem !important;
+}
+
+.badge {
+    padding: 0.4rem 0.65rem 0.25rem;
+}
+.text-uppercase-bold-sm {
+    text-transform: uppercase !important;
+    font-weight: 500 !important;
+    letter-spacing: 2px !important;
+    font-size: 0.85rem !important;
+}
+.bg-pastel-primary {
+    background-color: var(--main-light-grey) !important;
+}
+
+.icon-circle-lg {
+    width: 4rem;
+    height: 4rem;
+}
+.icon-circle {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 50%;
+}
+.bg-pastel-primary {
+    background-color: var(--main-light-grey) !important;
+}
+
+.icon-circle[class*="text-"] [fill]:not([fill="none"]),
+.icon-circle[class*="text-"] svg:not([fill="none"]),
+.svg-icon[class*="text-"] [fill]:not([fill="none"]),
+.svg-icon[class*="text-"] svg:not([fill="none"]) {
+    fill: currentColor !important;
+}
+.icon-circle-lg > svg {
+    width: 2rem;
+    height: 2rem;
+}
+
+.shadow-sm {
+    box-shadow: 0 0.125rem 0.25rem rgba(35, 38, 45, 0.09) !important;
+}
+
+.input-group:not(.has-validation) > .dropdown-toggle:nth-last-child(n + 3),
+.input-group:not(.has-validation)
+    > :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.input-group-lg > .btn,
+.input-group-lg > .form-control,
+.input-group-lg > .form-select,
+.input-group-lg > .input-group-text {
+    padding: 0.5rem 1rem;
+    font-size: 1.25rem;
+    border-radius: 0.3rem;
+}
+.border-0 {
+    border: 0 !important;
+}
+.input-group-text {
+    display: flex;
+    align-items: center;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #1f2c73;
+    text-align: center;
+    white-space: nowrap;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+}
+
+/* /=========================== Terms & Condition css ===========================/ */
+.welcome-text {
+    font-weight: 500;
+    text-align: justify;
+}
+
+.terms-detail {
+    text-align: justify;
+}
+#loader {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: #fff;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+    opacity: 0.9;
+}
+
+#center {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* /=========================== SC Category css ===========================/ */
+.icon-support-center {
+    font-size: 40px;
+    color: var(--main-blue-dark);
+}
+
+.page-num {
+    background-color: var(--main-light-blue) !important;
+}
+
+/* /=========================== POS DASHBOARD css ===========================/ */
+.card-statistic-1:hover {
+    transform: translateY(-4px);
+}
+
+.badge.fixed-width {
+    width: 150px;
+}
