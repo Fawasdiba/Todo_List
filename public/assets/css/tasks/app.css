@@ -1,0 +1,235 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+:root {
+    --main-light-blue: #e0f2fe;
+    /* Light Blue */
+    --main-light-green: #f0fdfa;
+    /* Light Green */
+    --main-teal: #14b8a6;
+    /* Teal */
+    --main-gray: #cbd5e1;
+    /* Light Gray */
+    --main-navy: #1d4ed8;
+    /* Navy Blue */
+    --main-orange: #ff9800;
+    /* Orange */
+    --main-bright-green: #39f941;
+    /* Bright Green */
+    --main-red: #f44336;
+    /* Red */
+    --main-emerald: #10b981;
+    /* Emerald Green */
+}
+
+.page-title i {
+    font-size: 36px;
+    color: var(--main-teal);
+}
+
+.page-title span {
+    font-size: 26px;
+    margin-top: 8px;
+    color: var(--main-teal);
+    font-weight: 700;
+}
+
+.search i {
+    font-size: 22px;
+}
+
+.search input::placeholder {
+    font-weight: 600;
+    color: #000;
+}
+
+.search input {
+    background-color: var(--main-light-blue);
+}
+
+.search input:focus,
+textarea:focus {
+    outline: none;
+    box-shadow: none;
+    /* Menonaktifkan bayangan jika ada */
+    background-color: var(--main-light-blue);
+}
+
+.btn.btn-custom i {
+    font-size: 20px;
+}
+
+.btn.btn-custom {
+    padding: 0.5rem 1rem !important;
+    background-color: var(--main-navy) !important;
+    color: var(--main-white) !important;
+}
+
+.btn.btn-custom:active {
+    background-color: var(--main-navy) !important;
+    color: #fff;
+    transform: translateY(3px) !important;
+}
+
+.btn.btn-custom span {
+    color: #ffff;
+    font-weight: 500;
+}
+
+.btn.btn-custom i {
+    color: #ffff;
+    font-weight: 600;
+}
+
+.create input:focus,
+textarea:focus {
+    outline: none;
+    box-shadow: none;
+    /* Menonaktifkan bayangan jika ada */
+}
+
+/* Table */
+.custom-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background-color: var(--main-light-blue);
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.custom-table .thead-custom {
+    background-color: var(--main-gray);
+    border: 1px solid var(--main-gray);
+}
+
+.thead-custom th {
+    border-bottom: none !important;
+}
+
+.custom-table th,
+.custom-table td {
+    padding: 8px 12px;
+    text-align: center;
+    border-bottom: 1px solid #000000;
+}
+
+.custom-table i {
+    margin-right: 0px;
+    font-size: 24px;
+}
+
+/* Custom Table Button */
+.custom-table .btn-custom1 {
+    margin-right: 6px;
+    padding: 6px;
+    background-color: var(--main-bright-green);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+}
+
+.custom-table .btn-custom2 {
+    padding: 8px;
+    background-color: var(--main-light-blue);
+    color: var(--main-orange);
+    border: none;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+}
+
+.custom-table .btn-custom3 {
+    background-color: var(--main-light-blue);
+    color: var(--main-red);
+    padding: 8px;
+    border: none;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+}
+
+.btn-custom1:hover {
+    color: #fff !important;
+    background-color: var(--main-bright-green) !important;
+}
+
+.btn-custom2:hover {
+    color: var(--main-orange) !important;
+}
+
+.btn-custom3:hover {
+    color: var(--main-red) !important;
+}
+
+.form-label {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.create {
+    background-color: var(--main-light-blue);
+    padding: 18px;
+}
+
+.btn.btn-cancel {
+    background-color: var(--main-red);
+    color: #fff;
+    font-weight: 500;
+    border: 1px solid var(--main-red);
+}
+
+.btn.btn-cancel:hover {
+    background-color: var(--main-red);
+    color: #fff;
+    font-weight: 500;
+}
+
+.btn.btn-cancel:active {
+    background-color: #c9302c !important;
+    color: #fff !important;
+    font-weight: 500;
+}
+
+.btn.btn-cancel span {
+    font-size: 16px;
+    padding: 12px;
+    font-weight: 500;
+}
+
+.btn.btn-create {
+    background-color: #10B981;
+    color: #fff;
+    font-weight: 500;
+}
+
+.btn.btn-create:hover {
+    background-color: #10B981;
+    color: #fff;
+    font-weight: 500;
+}
+
+.btn.btn-create:active {
+    background-color: #10B980 !important;
+    color: #fff !important;
+    font-weight: 500;
+}
+
+.btn.btn-create span {
+    font-weight: 500;
+    font-size: 16px;
+    padding: 12px;
+}

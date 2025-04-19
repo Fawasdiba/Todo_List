@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+:root {
+    --main-light-blue: #e0f2fe;
+    /* Light Blue */
+    --main-light-green: #f0fdfa;
+    /* Light Green */
+    --main-teal: #14b8a6;
+    /* Teal */
+    --main-gray: #cbd5e1;
+    /* Light Gray */
+    --main-navy: #1d4ed8;
+    /* Navy Blue */
+    --main-orange: #ff9800;
+    /* Orange */
+    --main-bright-green: #39f941;
+    /* Bright Green */
+    --main-red: #f44336;
+    /* Red */
+    --main-emerald: #10b981;
+    /* Emerald Green */
+}
+
+.custom-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background-color: var(--main-light-blue);
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-top: 70px;
+}
+
+.custom-table .thead-custom {
+    background-color: var(--main-gray);
+    border: 1px solid var(--main-gray);
+}
+
+.thead-custom th {
+    border-bottom: none !important;
+}
+
+.custom-table th,
+.custom-table td {
+    padding: 9px 14px;
+    text-align: center;
+    border-bottom: 1px solid #000000;
+}
+
+/* Card */
+.card-container {
+    display: flex;
+    justify-content: flex-start;
+    gap: 30px;
+    padding: 0 20px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.card {
+    width: 290px;
+    height: auto;
+    background-color: white;
+    border-radius: 10px;
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.card-count {
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+}
+
+.card-icon {
+    margin-top: 10px;
+    margin-left: auto;
+    width: 60px;
+    height: 60px;
+    background-color: #1a3c8b;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card i {
+    background-color: #1a3c8b;
+    color: white;
+    margin-left: 10px;
+    font-size: 28px;
+}
+
+.page-title i {
+    font-size: 36px;
+    color: var(--main-teal);
+}
+
+.page-title span {
+    font-size: 26px;
+    margin-top: 8px;
+    color: var(--main-teal);
+    font-weight: 700;
+}

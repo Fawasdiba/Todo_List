@@ -29,17 +29,17 @@
         <div class="sidebar">
             <div class="sidebar-header">
                 <div class="logo">
-                    <span class="menu-text">Profile</span> <!-- Plain text -->
+                    <span class="menu-text">NextNote</span> <!-- Plain text -->
                 </div>
                 <button class="toggle-btn">
                     <i class="fas fa-bars"></i>
                 </button>
             </div>
-            <a href="#" class="menu-item">
+            <a href="/dashboard" class="menu-item">
                 <i class="fas fa-chart-simple"></i>
                 <span class="menu-text">Dashboard</span> <!-- Plain text -->
             </a>
-            <a href="#" class="menu-item">
+            <a href="/all-tasks" class="menu-item">
                 <i class="fas fa-list-check"></i>
                 <span class="menu-text">All Tasks</span> <!-- Plain text -->
             </a>

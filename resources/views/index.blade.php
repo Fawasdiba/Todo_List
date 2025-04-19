@@ -1,5 +1,13 @@
 @extends('layouts.sidebar')
+<link rel="stylesheet" href="{{ asset('assets/css/tasks/custom.css') }}">
 @section('content')
+    <div class="container mb-5 mt-4">
+        <div class="d-flex align-items-center page-title" style="margin-left: 20px">
+            <i class="fas fa-house"></i>
+            <span>Dashboard</span>
+        </div>
+    </div>
+
     <div class="card-container">
         <div class="card shadow">
             <div class="row">
@@ -50,49 +58,60 @@
         </div>
     </div>
 
-    <table class="custom-table">
-        <thead class="thead-custom">
-            <tr>
-                <th>No</th>
-                <th>Tasks Name</th>
-                <th>Priority</th>
-                <th>Start Date</th>
-                <th>Due Date</th>
-                <th>Description</th>
-                <th>Status</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th scope="row">2</th>
-                <td>Data</td>
-                <td>Data</td>
-                <td>Data</td>
-                <td>Data</td>
-                <td>Data</td>
-                <td>Data</td>
-                <td>
-                    <button class="btn btn-sm btn-custom1">
-                        <i class="fas fa-check"></i>
-                    </button>
-                    <button class="btn btn-sm btn-custom2">
-                        <i class="fas fa-pen-to-square"></i>
-                    </button>
-                    <button class="btn btn-sm btn-custom3">
-                        <i class="fas fa-trash"></i>
-                    </button>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Data</td>
-                <td>Data</td>
-                <td>Data</td>
-                <td>Data</td>
-                <td>Data</td>
-                <td>Data</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="container">
+        <table class="custom-table" style="margin-left: 10px">
+            <thead class="thead-custom text-center">
+                <tr>
+                    <th>No</th>
+                    <th>Tasks Name</th>
+                    <th>Priority</th>
+                    <th>Due Date</th>
+                    <th>Description</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                </tr>
+                <tr>
+                    <th scope="row">4</th>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                </tr>
+                <tr>
+                    <th scope="row">5</th>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 @endsection
