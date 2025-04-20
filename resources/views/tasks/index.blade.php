@@ -72,7 +72,9 @@
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
                                             data-bs-dismiss="modal">Cancel</button>
-                                        <form action="" method="POST">
+                                        <form action="{{ route('task.markAsDone', $task->id) }}" method="POST">
+                                            @csrf
+                                            @method('PATCH')
                                             <button type="button" class="btn btn-success" data-bs-dismiss="modal">Completed
                                                 Tasks</button>
                                         </form>
@@ -198,6 +200,11 @@
                         </button>
                     </td>
                 </tr>
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-center">
+                        {{-- {{ $latestTaskCount->links() }} --}}
+                    </ul>
+                </nav>
             </tbody>
         </table>
     </div>

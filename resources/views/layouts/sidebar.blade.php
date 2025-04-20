@@ -48,6 +48,11 @@
         <div class="main">
             @yield('content')
         </div>
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
     </div>
 
     {{-- sidebar script --}}
@@ -106,6 +111,22 @@
                         openDropdown.style.display = "none";
                     }
                 }
+            }
+        };
+    </script>
+
+    <script>
+        window.onload = function() {
+            // Menampilkan notifikasi jika ada session success
+            const successAlert = document.querySelector('.alert');
+
+            if (successAlert) {
+                successAlert.classList.add('show');
+
+                // Menghilangkan notifikasi setelah 5 detik
+                setTimeout(() => {
+                    successAlert.classList.remove('show');
+                }, 5000); // Ganti 5000 jika ingin menyesuaikan waktu tampilan
             }
         };
     </script>

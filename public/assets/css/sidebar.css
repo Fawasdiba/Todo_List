@@ -25,6 +25,30 @@
     --main-emerald: #10b981;
     /* Emerald Green */
 }
+.alert {
+    position: fixed;
+    top: 20px; /* Jarak dari atas layar */
+    right: 20px; /* Jarak dari kanan layar */
+    z-index: 9999; /* Pastikan notifikasi muncul di atas konten lainnya */
+    width: auto; /* Sesuaikan lebar sesuai dengan konten */
+    max-width: 300px; /* Atur lebar maksimal jika perlu */
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.alert-success {
+    background-color: #28a745;
+    color: white;
+}
+
+.alert.show {
+    opacity: 1;
+    visibility: visible;
+}
 
 .custom {
     min-height: 100vh;
