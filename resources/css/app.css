@@ -10,3 +10,101 @@
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
+
+public function index(Request $request) { $search = $request->input('search');
+    $taskCount = Task::count(); $completedTaskCount = Task::where('status',
+    'completed')->count(); $pendingTaskCount = Task::where('status',
+    'pending')->count(); $latestTaskCount = Task::when($search, function ($query,
+    $search) { return $query->where('tasks_name', 'like', "%{$search}%")
+    ->orWhere('description', 'like', "%{$search}%"); }) ->orderBy('created_at',
+    'desc') ->paginate(10); return view('tasks.index', compact( 'taskCount',
+    'completedTaskCount', 'pendingTaskCount', 'latestTaskCount', 'search' // kirim
+    juga ke view )); } @extends('layouts.sidebar')
+    <link rel="stylesheet" href="{{ asset('assets/css/tasks/app.css') }}" />
+    
+    @section('content')
+    <div class="container mb-5 mt-4">
+        <!-- Judul Halaman -->
+        <div
+            class="d-flex align-items-center page-title mb-4"
+            style="margin-left: 20px"
+        >
+            <i class="fas fa-clipboard-list me-2"></i>
+            <span>All Tasks</span>
+        </div>
+    
+        <!-- Search dan Tambah Button -->
+        <div class="row mb-2" style="margin-top: 6%; margin-left: 0px">
+            <!-- Kolom Search -->
+            <div class="col-md-6 mb-2 mb-md-0">
+                <form method="GET" action="{{ route('task.index') }}">
+                    <div class="position-relative search">
+                        <input
+                            type="text"
+                            name="search"
+                            class="form-control ps-5"
+                            placeholder="Search Tasks ..."
+                            aria-label="Search tasks"
+                            value="{{ request('search') }}"
+                        />
+                        <i
+                            class="fas fa-search position-absolute top-50 start-0 translate-middle-y ms-3"
+                        ></i>
+                    </div>
+                </form>
+            </div>
+    
+            <!-- Kolom Tombol Tambah -->
+            <div class="col-md-6 text-md-end">
+                <a href="{{ route('task.create') }}" class="btn btn-custom">
+                    <i class="fas fa-plus me-1"></i>
+                    <span>Tambah Tugas</span>
+                </a>
+            </div>
+        </div>
+    
+        <!-- Table -->
+        <table class="custom-table" style="margin-left: 10px">
+            <thead class="thead-custom text-center">
+                <tr>
+                    <th>No</th>
+                    <th>Tasks Name</th>
+                    <th>Priority</th>
+                    <th>Start Date</th>
+                    <th>Due Date</th>
+                    <th>Description</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @forelse ($latestTaskCount as $task)
+                <tr>
+                    <th scope="row">{{ $loop->iteration }}</th>
+                    <td>{{ $task->tasks_name }}</td>
+                    <td>{{ $task->priority }}</td>
+                    <td>{{ $task->created_at->format('d M Y') }}</td>
+                    <td>{{ $task->due_date }}</td>
+                    <td>{{ $task->description }}</td>
+                    <td>{{ $task->status }}</td>
+                    <td>
+                        <!-- Actions (modal selesai & hapus) -->
+                        {{-- ... Modal dan button sama seperti sebelumnya --}}
+                    </td>
+                </tr>
+                @empty
+                <tr>
+                    <td colspan="8" class="text-center">No tasks found.</td>
+                </tr>
+                @endforelse
+            </tbody>
+        </table>
+    
+        <!-- Pagination -->
+        <div class="mt-4 d-flex justify-content-center">
+            {{ $latestTaskCount->appends(['search' => request('search')])->links()
+            }}
+        </div>
+    </div>
+    @endsection
+    
