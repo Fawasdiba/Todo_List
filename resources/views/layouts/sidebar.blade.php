@@ -35,11 +35,11 @@
                     <i class="fas fa-bars"></i>
                 </button>
             </div>
-            <a href="/dashboard" class="menu-item">
+            <a href="{{ route('dashboard') }}" class="menu-item">
                 <i class="fas fa-chart-simple"></i>
                 <span class="menu-text">Dashboard</span> <!-- Plain text -->
             </a>
-            <a href="/all-tasks" class="menu-item">
+            <a href="{{ route('tasks.index') }}" class="menu-item">
                 <i class="fas fa-list-check"></i>
                 <span class="menu-text">All Tasks</span> <!-- Plain text -->
             </a>
