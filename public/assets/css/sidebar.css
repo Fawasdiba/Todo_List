@@ -27,11 +27,11 @@
 }
 .alert {
     position: fixed;
-    top: 20px; /* Jarak dari atas layar */
-    right: 20px; /* Jarak dari kanan layar */
-    z-index: 9999; /* Pastikan notifikasi muncul di atas konten lainnya */
-    width: auto; /* Sesuaikan lebar sesuai dengan konten */
-    max-width: 300px; /* Atur lebar maksimal jika perlu */
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    width: auto;
+    max-width: 300px;
     padding: 15px;
     border-radius: 5px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -110,7 +110,7 @@
 }
 
 .menu-item .menu-text {
-    font-size: 17px;
+    font-size: 18px;
 }
 
 .content {
