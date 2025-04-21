@@ -11,28 +11,29 @@ class TaskController extends Controller
         $taskCount = Task::count();
         $completedTaskCount = Task::where('status', 'completed')->count();
         $pendingTaskCount = Task::where('status', 'pending')->count();
+        $inProgressTaskCount = Task::where('status', 'in progress')->count();
         $latestTaskCount = Task::orderBy('created_at', 'desc')->take(5)->get();
-        return view('dashboard', compact('taskCount', 'completedTaskCount', 'pendingTaskCount', 'latestTaskCount'));
+
+        return view('dashboard', compact('taskCount', 'completedTaskCount', 'pendingTaskCount', 'latestTaskCount', 'inProgressTaskCount'));
     }
 
     public function index (){
         $task = Task::count();
-        $completedTaskCount = Task::where('status', 'completed')->count();
-        $pendingTaskCount = Task::where('status', 'pending')->count();
-        $latestTaskCount = Task::orderBy('created_at', 'asc')->paginate(10);
-        return view('tasks.index', compact('task', 'completedTaskCount', 'pendingTaskCount', 'latestTaskCount'));
+        $latestTaskCount = Task::orderBy('due_date', 'asc')->paginate(10);
+
+        return view('tasks.index', compact('task', 'latestTaskCount'));
     }
     public function create(){
         return view('tasks.create');
     }
 
     public function store(Request $request){
-        $validated= $request->validate([
-            'tasks_name'=>'required|string|max:255',
+        $validated = $request->validate([
+            'tasks_name'=>'required|string|max:100',
             'status'=>'required|string',
             'priority'=>'required|string',
             'due_date'=>'required|date',
-            'description'=>'required|string',
+            'description'=>'required|string|max:255',
         ]);
 
         Task::create($validated);
@@ -42,16 +43,17 @@ class TaskController extends Controller
 
     public function edit($id){
         $task = Task::findOrFail($id);
+
         return view('tasks.edit', compact('task'));
     }
 
     public function update(Request $request, $id) {
         $task = $request->validate([
-            'tasks_name'=>'required|string|max:255',
+            'tasks_name'=>'required|string|max:100',
             'status'=>'required|string',
             'priority'=>'required|string',
             'due_date'=>'required|date',
-            'description'=>'nullable|string',
+            'description'=>'required|string|max:255',
         ]);
 
         $task = Task::findOrFail($id);
@@ -64,7 +66,7 @@ class TaskController extends Controller
 
         $task->save();
 
-        return redirect()->route('tasks.index', ['id' => $task->id])->with('success', 'Task SuccessFully Updated');
+        return redirect()->route('tasks.index')->with('success', 'Task SuccessFully Updated');
     }
     public function destroy($id) {
         $task = Task::findOrFail($id);
@@ -79,6 +81,6 @@ class TaskController extends Controller
 
         $task->save();
 
-        return redirect()->route('tasks.index')->with('success', 'Task success deleted');
+        return redirect()->route('tasks.index')->with('success', 'Task has been Mark As Done');
     }
 }
