@@ -19,7 +19,7 @@ class TaskController extends Controller
         $task = Task::count();
         $completedTaskCount = Task::where('status', 'completed')->count();
         $pendingTaskCount = Task::where('status', 'pending')->count();
-        $latestTaskCount = Task::paginate(10);
+        $latestTaskCount = Task::orderBy('created_at', 'asc')->paginate(10);
         return view('tasks.index', compact('task', 'completedTaskCount', 'pendingTaskCount', 'latestTaskCount'));
     }
     public function create(){
