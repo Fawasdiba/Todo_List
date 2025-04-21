@@ -1,16 +1,18 @@
 @extends('layouts.sidebar')
 <link rel="stylesheet" href="{{ asset('assets/css/tasks/app.css') }}">
 @section('content')
-    <div class="container mb-5 mt-4">
+    <div class="p-5 mb-5 mt-4">
         <div class="d-flex align-items-center page-title mb-4" style="margin-left: 20px">
             <span>Edit Tasks</span>
         </div>
 
-        <form class="create">
+        <form class="create" action="{{ route('task.update', $task->id) }}" method="POST">
+            @csrf
+            @method('PUT')
             <!-- Input untuk Judul Tugas -->
             <div class="mb-3">
-                <label for="taskName" class="form-label">Task Name</label>
-                <input type="text" class="form-control" id="taskName" name="taskName" placeholder="Enter Task Name"
+                <label for="task_name" class="form-label">Task Name</label>
+                <input type="text" class="form-control" id="task_name" name="tasks_name" value="{{ $task->tasks_name }}" placeholder="Enter Task Name"
                     required>
             </div>
 
@@ -19,39 +21,39 @@
                 <label for="status" class="form-label">Status</label>
                 <select class="form-select" name="status" id="status" required>
                     <option value="" disabled selected>Choose Status</option>
-                    <option value="pending">Pending</option>
-                    <option value="in_progress">In Progress</option>
-                    <option value="completed">Completed</option>
+                    <option value="Pending" {{ $task->status == 'Pending' ? 'selected' : ''}}>Pending</option>
+                    <option value="In Progress" {{ $task->status == 'In Progress' ? 'selected' : ''}}>In Progress</option>
+                    <option value="Completed" {{ $task->status == 'Completed' ? 'selected' : ''}}>Completed</option>
                 </select>
             </div>
 
             <!-- Input untuk Priority -->
             <div class="mb-3">
                 <label for="priority" class="form-label">Priority</label>
-                <select class="form-select" name="priority" id="priorty" required>
+                <select class="form-select" name="priority" id="priority" required>
                     <option value="" disabled selected>Choose Priority</option>
-                    <option value="low">Low</option>
-                    <option value="medium">Medium</option>
-                    <option value="high">High</option>
+                    <option value="Low" {{ $task->priority == 'Low' ? 'selected' : '' }}>Low</option>
+                    <option value="Medium" {{ $task->priority == 'Medium' ? 'selected' : '' }}>Medium</option>
+                    <option value="High" {{ $task->priority == 'High' ? 'selected' : ''}}>High</option>
                 </select>
             </div>
 
             <!-- Input untuk Tanggal Deadline -->
             <div class="mb-3">
-                <label for="duedate" class="form-label">Due Date</label>
-                <input type="date" class="form-control" id="duedate" name="dueDate" required>
+                <label for="due_date" class="form-label">Due Date</label>
+                <input type="date" class="form-control" id="due_date" name="due_date" value="{{ $task->due_date }}" required>
             </div>
 
             <!-- Input untuk Deskripsi Tugas -->
             <div class="mb-5">
                 <label for="description" class="form-label">Description</label>
                 <textarea class="form-control" id="description" rows="4" name="description" placeholder="Enter Task Description"
-                    required></textarea>
+                    required>{{ $task->description }}</textarea>
             </div>
 
             <!-- Tombol Submit -->
             <div class="text-end">
-                <a href="/all-tasks" class="btn btn-cancel me-3">
+                <a href="{{ route('tasks.index') }}" class="btn btn-cancel me-3">
                     <span>Cancel</span>
                 </a>
                 <button type="submit" class="btn btn-create">
